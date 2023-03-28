@@ -26,6 +26,10 @@
     -   app.tsx 运行时配置
     -   loading.tsx 全局加载组件
 
+### 资源地址
+
+UI 图 https://app.mockplus.cn/app/AxY2HlRKXd13/design?hmsr=share1 原型图 https://modao.cc/app/0de053041126aaa1787c0a2d57cb9d295c36fecf
+
 ### 安装
 
 ```
