@@ -1,0 +1,11 @@
+{
+    "extends": "./src/.umi/tsconfig.json",
+    "compilerOptions": {
+        "paths": {
+            "components/*": ["src/components/*"],
+            "utils/*": ["src/utils/*"],
+            "assets/*": ["src/assets/*"],
+            "services/*": ["src/services/*"]
+        }
+    }
+}
