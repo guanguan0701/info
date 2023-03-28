@@ -2,5 +2,5 @@ import { DotLoading } from 'antd-mobile';
 import React from 'react';
 
 export default () => {
-    return <DotLoading color='primary' />;
+    return <DotLoading style={{ margin: '20px auto' }} color='primary' />;
 };
