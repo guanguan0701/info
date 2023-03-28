@@ -17,7 +17,7 @@
         "pre-merge-commit": "pig-fabric --hooks=pre-merge-commit",
         "prepare": "npx husky install",
         "start": "npm run test",
-        "test": "cross-env NODE_ENVE=test umi dev"
+        "test": "cross-env NODE_ENV_APP=test umi dev"
     },
     "lint-staged": {
         "*.{js,jsx,ts,tsx,less,css,md}": "pretty-quick --staged",
@@ -29,7 +29,6 @@
         "@pigjs/utils": "^1.0.5",
         "antd-mobile": "^5.28.2",
         "axios": "^1.3.4",
-        "lib-flexible": "^0.3.2",
         "umi": "^4.0.63"
     },
     "devDependencies": {
@@ -41,7 +40,6 @@
         "husky": "8.0.2",
         "lint-staged": "13.0.3",
         "postcss-px-to-viewport": "^1.1.1",
-        "postcss-pxtorem": "^6.0.0",
         "prettier": "2.7.1",
         "pretty-quick": "3.1.3",
         "stylelint": "13.13.1"

@@ -16,7 +16,7 @@ export default defineConfig({
         services: resolve(__dirname, './src/services')
     },
     define: {
-        'process.env.NODE_ENV': process.env.NODE_ENV
+        'process.env.NODE_ENV_APP': process.env.NODE_ENV_APP
     },
     mfsu: false,
     hash: true,
