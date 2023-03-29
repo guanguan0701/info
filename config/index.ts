@@ -2,7 +2,7 @@ const configs = {
     test: {
         proxy: {
             '/api': {
-                target: 'https://www.fastmock.site/mock/38ec651a2256bbbc6c8b1a16d650e6fa/info',
+                target: 'https://www.fastmock.site/mock/88de9ddda751cea773d71950aa53b0ad/item',
                 changeOrigin: true
             }
         }
