@@ -39,7 +39,7 @@ const ResearchWeighty = (props) => {
                 {/* </Form.Item> */}
                 {/* </Form.Item> */}
 
-                {props.data.map((item) => {
+                {/* {props.data.map((item) => {
                     return (
                         <div key={item.id} className={styles.researchWeighty_item}>
                             <div className={styles.researchWeighty_item_top}>
@@ -60,15 +60,13 @@ const ResearchWeighty = (props) => {
                             </div>
                         </div>
                     );
-                })}
-                <div className={styles.researchWeighty_bottom}>-没有更多数据了-</div>
-                <AddCircleOutline
+                })} */}
+                {/* <div className={styles.researchWeighty_bottom}>-没有更多数据了-</div> */}
+                {/* <AddCircleOutline
                     style={{ fontSize: 46, color: 'blue' }}
                     className={styles.researchWeighty_circleOutline}
                     onClick={() => setVisible(true)}
-                >
-                    +
-                </AddCircleOutline>
+                /> */}
                 <ActionSheet cancelText='取消' visible={visible} actions={actions} onClose={() => setVisible(false)} />
             </div>
         </div>

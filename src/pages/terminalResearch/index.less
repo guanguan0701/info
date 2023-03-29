@@ -1,0 +1,99 @@
+.page {
+    position: relative;
+    box-sizing: border-box;
+    padding: 7.75px 15px 15px 15px;
+    :global {
+        .adm-input-element {
+            font-size: 14px !important;
+        }
+    }
+    &_search {
+        --background: #fff !important;
+        --height: 35px !important;
+        margin-bottom: 16px;
+        font-size: 14px;
+
+        border: 1px solid #dfdddb;
+        border-radius: 6px;
+    }
+    &_list {
+        &_empty {
+            color: #bebbbf;
+            font-size: 12px;
+            text-align: center;
+        }
+    }
+    &_item {
+        box-sizing: border-box;
+        margin-bottom: 14px;
+        padding: 16px;
+        background: #fff;
+        border: 1px solid #dfdddb;
+        border-radius: 6px;
+        &_header {
+            display: flex;
+            align-items: center;
+        }
+        &_tag {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            height: 19px;
+            color: #199ab9;
+            font-size: 12px;
+            border: 1px solid #199ab9;
+            border-radius: 2px;
+        }
+        &_title {
+            margin-left: 10px;
+            color: #454f4e;
+            font-weight: 500;
+            font-size: 14px;
+            font-family: PingFang SC;
+        }
+        &_product {
+            margin-top: 16px;
+            color: #6a686b;
+            font-size: 12px;
+            line-height: 1.2;
+        }
+        &_template {
+            margin-top: 10px;
+            color: #6a686b;
+            font-size: 12px;
+            line-height: 1.2;
+        }
+        &_footer {
+            display: flex;
+            align-items: center;
+            margin-top: 14px;
+            color: #bebbbf;
+            font-size: 12px;
+        }
+    }
+    &_addIcon {
+        position: fixed;
+        right: 22px;
+        bottom: 33px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        color: #fff;
+        font-size: 36px;
+        background: #199aba;
+        border-radius: 50%;
+        box-shadow: 0 2px 2px 0 rgba(25, 154, 186, 0.2);
+    }
+    &_loading {
+        display: flex;
+        justify-content: center;
+        color: #666;
+        font-size: 12px;
+    }
+    &_errorBlcok {
+        margin-top: 75px;
+    }
+}

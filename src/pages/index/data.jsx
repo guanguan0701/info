@@ -3,7 +3,7 @@ export const dataSource = [
     {
         title: '终端调研',
         icon: '',
-        path: '/research'
+        path: '/terminalResearch'
     },
     {
         title: '商业配送机构调研',
