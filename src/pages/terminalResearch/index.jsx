@@ -1,13 +1,20 @@
-import { ActionSheet, DotLoading, ErrorBlock, SearchBar } from 'antd-mobile';
+import { ActionSheet, DotLoading, ErrorBlock, SearchBar, Toast } from 'antd-mobile';
 import { AddOutline } from 'antd-mobile-icons';
 import React from 'react';
-import { getResearchList } from 'services/research';
+import { getResearchList } from 'services/terminalResearch';
+import { history } from 'umi';
 
 import styles from './index.less';
 
 const actions = [
-    { text: '新建', key: 'create' },
-    { text: '草稿箱', key: 'draft' }
+    {
+        text: '新建',
+        key: 'create'
+    },
+    {
+        text: '草稿箱',
+        key: 'draft'
+    }
 ];
 
 const Index = () => {
@@ -18,11 +25,11 @@ const Index = () => {
         setLoading(true);
         try {
             const res = await getResearchList();
-            const data = res.data || [];
+            const data = res.data || []; // 空值处理
             console.log(data, 'data');
             setDataSource(data);
         } catch (err) {
-            console.error(err);
+            console.error(err); // 捕获错误
         }
         setLoading(false);
     };
@@ -31,18 +38,32 @@ const Index = () => {
         getData();
     }, []);
 
+    // const onCreate = () => {
+    //     let handler;
+    //     handler = ActionSheet.show({
+    //         actions,
+    //         cancelText: '取消',
+    //         onAction: (action) => {
+    //             window.alert(action.text);
+    //             handler?.close();
+    //         }
+    //     });
+    // };
     const onCreate = () => {
-        let handler;
-        handler = ActionSheet.show({
+        ActionSheet.show({
             actions,
             cancelText: '取消',
-            onAction: (action) => {
-                window.alert(action.text);
-                handler?.close();
+            closeOnAction: true,
+            onAction: (actions) => {
+                if (actions.key === 'create') {
+                    history.push('/terminalResearch/selectingTemplate');
+                }
+                if (actions.key === 'draft') {
+                    history.push('/research');
+                }
             }
         });
     };
-
     return (
         <div className={styles.page}>
             <SearchBar placeholder='请输入表单名称、登记人进行搜索' className={styles.page_search} />
@@ -56,7 +77,7 @@ const Index = () => {
                     {dataSource.length > 0 ? (
                         <div className={styles.page_list}>
                             {dataSource.map((item) => (
-                                <div key={item.id} className={styles.page_item}>
+                                <div key={item.id} className={styles.page_item} onClick={() => history.push('/')}>
                                     <div className={styles.page_item_header}>
                                         <div className={styles.page_item_tag}>{item.type}</div>
                                         <div className={styles.page_item_title}>{item.name}</div>
@@ -77,7 +98,7 @@ const Index = () => {
                             </div>
                         </div>
                     ) : (
-                        <div className={styles.page_errorBlcok}>
+                        <div className={styles.page_errorBlock}>
                             <ErrorBlock status='empty' description={<a onClick={onCreate}>立即创建</a>} />
                         </div>
                     )}

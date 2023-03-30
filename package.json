@@ -20,9 +20,12 @@
         "test": "cross-env NODE_ENV_APP=test umi dev"
     },
     "lint-staged": {
-        "*.{js,jsx,ts,tsx,less,css,md}": "pretty-quick --staged",
         "*.{js,jsx,ts,tsx}": "eslint --fix --quiet",
-        "*.{css,less}": "stylelint"
+        "*.{md}": "pretty-quick --staged",
+        "*.{css,less}": [
+            "stylelint",
+            "pretty-quick --staged"
+        ]
     },
     "dependencies": {
         "@pigjs/request": "^1.0.2",

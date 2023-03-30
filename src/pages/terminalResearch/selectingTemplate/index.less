@@ -1,0 +1,110 @@
+.page {
+    box-sizing: border-box;
+    padding: 7.75px 15px 0 15px;
+
+    :global {
+        .adm-input-element {
+            font-size: 14px;
+        }
+    }
+
+    &_search {
+        margin-bottom: 15px;
+        background-color: #fff;
+        border: 1px solid #dfdddb;
+        border-radius: 6px;
+    }
+    &_item {
+        margin-bottom: 14px;
+        background: #fff;
+        border: 1px solid #dfdddb;
+        border-radius: 6px;
+        &_container {
+            display: flex;
+            box-sizing: border-box;
+            padding: 16px;
+            line-height: 15px;
+        }
+        &_icon {
+            width: 35px;
+            height: 43.75px;
+            border: 1px solid #dfdddb;
+        }
+        &_main {
+            margin-left: 12px;
+        }
+        &_title {
+            max-width: 217px;
+            margin-bottom: 8px;
+            color: #454f4e;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        &_useCondition {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        &_isUse {
+            color: #0af;
+            font-size: 10px;
+        }
+        &_symbol {
+            display: block;
+            margin: 0 12.5px 0 10px;
+            color: #e0e0e0;
+            font-weight: 300;
+            font-size: 10px;
+        }
+        &_sequence {
+            color: #6a686b;
+            font-size: 10px;
+        }
+        &_bottom {
+            display: flex;
+            align-items: center;
+            line-height: 15px;
+        }
+        &_founder {
+            color: #bebbbf;
+            font-size: 10px;
+        }
+        &_element {
+            display: block;
+            margin: 0 12.5px 0 10px;
+            color: #e0e0e0;
+            font-weight: 300;
+            font-size: 10px;
+        }
+        &_time {
+            color: #bebbbf;
+            font-size: 10px;
+        }
+        &_type {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 19px;
+            margin-left: auto;
+            color: #199ab9;
+            font-size: 12px;
+            border: 1px solid #199ab9;
+            border-radius: 2px;
+        }
+    }
+    &_loading {
+        display: flex;
+        justify-content: center;
+        color: #666;
+        font-size: 12px;
+    }
+    &_footer {
+        display: flex;
+        justify-content: center;
+        color: #bebbbf;
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
