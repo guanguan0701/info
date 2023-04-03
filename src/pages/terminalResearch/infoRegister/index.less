@@ -1,0 +1,51 @@
+.page {
+    // &_textArea {
+    //     padding: 8px;
+    //     margin-top: 8px;
+    //     background-color: #fafafa;
+    //     border-radius: '8px';
+
+    &_textArea {
+        :global {
+            .adm-text-area-count {
+                font-size: 14px;
+            }
+        }
+
+        --font-size: 14px;
+        box-sizing: border-box;
+        margin-top: 8px;
+
+        padding: 8px;
+        background-color: #fafafa;
+        border-radius: 8px;
+    }
+    // }
+    &_item {
+        font-size: 14px;
+        :global {
+            .adm-input-element {
+                font-size: 14px !important;
+            }
+            .adm-form-item-label {
+                font-size: 14px !important;
+            }
+        }
+        &_header {
+            display: flex !important;
+        }
+
+        &_symbol {
+            width: 2px;
+            height: 12px;
+            margin-right: 4px;
+            background-color: #189ab9;
+            border-radius: 2px;
+        }
+        &_info {
+            color: #9a979b;
+            // display: block;
+            font-size: 12px;
+        }
+    }
+}

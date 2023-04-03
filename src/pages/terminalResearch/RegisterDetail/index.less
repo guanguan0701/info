@@ -1,0 +1,74 @@
+:global {
+    .adm-auto-center-content {
+        color: #454f4e;
+        font-size: 14px;
+        text-align: center;
+    }
+    .adm-dialog-title {
+        color: #323233;
+        font-size: 16px;
+    }
+}
+.page {
+    box-sizing: border-box;
+    padding: 0 0 24px 0;
+    :global {
+        .adm-list-card {
+            box-sizing: border-box !important;
+            margin: 0 !important;
+            padding: 0 16px !important;
+        }
+    }
+
+    &_header {
+        display: flex !important;
+        margin: 16px 0 8px 0;
+        padding: 0 16px;
+        &_symbol {
+            width: 2px;
+            height: 12px;
+            margin-right: 4px;
+            background-color: #189ab9;
+            border-radius: 2px;
+        }
+        &_info {
+            color: #9a979b;
+            // display: block;
+            font-size: 12px;
+        }
+    }
+
+    &_item {
+        display: flex;
+        &_left {
+            margin-right: 35px;
+            color: #646566;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        &_right {
+            margin-left: auto;
+            color: #454f4e;
+            font-size: 14px;
+            text-align: right;
+        }
+    }
+    &_button {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        margin-top: 20px;
+        padding: 0 16px;
+
+        &_left {
+            width: 165px;
+            margin-right: 12px;
+            color: #454f4e;
+            font-size: 16px;
+        }
+        &_right {
+            width: 165px;
+            font-size: 16px;
+        }
+    }
+}

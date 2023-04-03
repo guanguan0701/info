@@ -40,7 +40,12 @@ const SelectingTemplate = () => {
                             <div
                                 className={styles.page_item}
                                 key={item.id}
-                                onClick={() => history.push('/terminalResearch/informationRegister')}
+                                onClick={() =>
+                                    history.push(
+                                        { pathname: '/terminalResearch/infoRegister' },
+                                        { some: item.templateName }
+                                    )
+                                }
                             >
                                 <div className={styles.page_item_container}>
                                     <div className={styles.page_item_icon} />

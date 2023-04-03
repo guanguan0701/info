@@ -1,26 +1,14 @@
-import { ActionSheet, DotLoading, ErrorBlock, SearchBar, Toast } from 'antd-mobile';
-import { AddOutline } from 'antd-mobile-icons';
+import { ActionSheet, Dialog, DotLoading, ErrorBlock, SearchBar, Toast } from 'antd-mobile';
+import { AddOutline, MinusCircleOutline } from 'antd-mobile-icons';
 import React from 'react';
 import { getResearchList } from 'services/terminalResearch';
 import { history } from 'umi';
-
 import styles from './index.less';
 
-const actions = [
-    {
-        text: '新建',
-        key: 'create'
-    },
-    {
-        text: '草稿箱',
-        key: 'draft'
-    }
-];
-
-const Index = () => {
+const DraftBox = () => {
     const [dataSource, setDataSource] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
-
+    // 获取数据列表
     const getData = async () => {
         setLoading(true);
         try {
@@ -33,7 +21,12 @@ const Index = () => {
         }
         setLoading(false);
     };
-
+    // 删除数据
+    const remove = () => {
+        Dialog.confirm({
+            content: '删除后内容将不可恢复！确定删除该草稿么?'
+        });
+    };
     React.useEffect(() => {
         getData();
     }, []);
@@ -59,7 +52,7 @@ const Index = () => {
                     history.push('/terminalResearch/selectingTemplate');
                 }
                 if (actions.key === 'draft') {
-                    history.push('/terminalResearch/draftBox');
+                    history.push('/research');
                 }
             }
         });
@@ -85,6 +78,11 @@ const Index = () => {
                                     <div className={styles.page_item_header}>
                                         <div className={styles.page_item_tag}>{item.type}</div>
                                         <div className={styles.page_item_title}>{item.name}</div>
+                                        <MinusCircleOutline
+                                            color='#BEBBBF'
+                                            style={{ marginLeft: 'auto' }}
+                                            onClick={remove}
+                                        />
                                     </div>
                                     <div className={styles.page_item_product}>
                                         目标产品：{item.targetProduct || '-'}
@@ -112,4 +110,4 @@ const Index = () => {
     );
 };
 
-export default Index;
+export default DraftBox;
